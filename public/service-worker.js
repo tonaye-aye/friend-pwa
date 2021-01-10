@@ -13,5 +13,7 @@ workbox.precaching.addPlugins([
 
 const updateChannel = new BroadcastChannel('precache-channel')
 updateChannel.addEventListener('message', (event) => {
-  window.location.reload()
+  if (confirm(`New content is available!. Click OK to refresh`)) {
+    window.location.reload()
+  }
 })
