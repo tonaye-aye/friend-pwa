@@ -1,6 +1,6 @@
 {
-  "name": "Friend",
-  "short_name": "Friend",
+  "name": "Remind me",
+  "short_name": "Remind me",
   "start_url": "/?home=true",
   "icons": [
     {
