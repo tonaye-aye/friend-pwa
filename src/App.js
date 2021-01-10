@@ -92,7 +92,7 @@ export default function App() {
           Install app
         </Button>
         <Typography variant="h4" gutterBottom align="center" color="primary">
-          Remind
+          Remind me!
         </Typography>
         <Form
           inputText={inputText}
