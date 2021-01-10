@@ -81,7 +81,6 @@ export default function App() {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Nav value={value} setStatus={setStatus} setValue={setValue} />
       <Container maxWidth="md">
         <Button
           variant="contained"
@@ -113,6 +112,7 @@ export default function App() {
           ))}
         </section>
       </Container>
+      <Nav value={value} setStatus={setStatus} setValue={setValue} />
     </React.Fragment>
   )
 }
