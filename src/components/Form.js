@@ -1,41 +1,41 @@
-import React from "react";
+import React from 'react'
 
 // import Material UI componenets
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles'
 
 // icons
-import AddIcon from "@material-ui/icons/Add";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
+import AddIcon from '@material-ui/icons/Add'
+import Button from '@material-ui/core/Button'
+import TextField from '@material-ui/core/TextField'
 
 // custom Material UI styles
 const useStyles = makeStyles({
   formContainer: {
-    display: "flex",
-    margin: "1rem 0 3rem 0"
+    display: 'flex',
+    margin: '1rem 0'
   },
   inputContainer: {
-    width: "100%"
+    width: '100%'
   }
-});
+})
 
 export default function Form({ inputText, setInputText, todos, setTodos }) {
   //custom styles
-  const classes = useStyles();
+  const classes = useStyles()
 
   // handle input text
   const inputTextHandler = (e) => {
-    setInputText(e.target.value);
-  };
+    setInputText(e.target.value)
+  }
   // submit new todo list item
   const submitTodoHandler = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     setTodos([
       ...todos,
       { text: inputText, completed: false, id: Math.random() * 1000 }
-    ]);
-    setInputText("");
-  };
+    ])
+    setInputText('')
+  }
 
   // return template JSX
   return (
@@ -43,7 +43,7 @@ export default function Form({ inputText, setInputText, todos, setTodos }) {
       <TextField
         className={classes.inputContainer}
         autoFocus
-        variant="outlined"
+        variant="filled"
         color="primary"
         value={inputText}
         onChange={inputTextHandler}
@@ -53,5 +53,5 @@ export default function Form({ inputText, setInputText, todos, setTodos }) {
         <AddIcon />
       </Button>
     </form>
-  );
+  )
 }

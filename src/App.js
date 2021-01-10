@@ -2,10 +2,8 @@
 import React, { useState, useEffect } from 'react'
 
 // import Material UI
-import Typography from '@material-ui/core/Typography'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import Container from '@material-ui/core/Container'
-import Button from '@material-ui/core/Button'
+import { Box, Button, Container } from '@material-ui/core'
+import CloseIcon from '@material-ui/icons/Close'
 
 // import components
 import Nav from './components/Nav'
@@ -28,7 +26,6 @@ export default function App() {
       let todoLocal = JSON.parse(localStorage.getItem('todos'))
       setTodos(todoLocal)
     }
-
     // Code to handle install prompt on desktop
     let deferredPrompt
     const addBtn = document.querySelector('.install')
@@ -79,20 +76,19 @@ export default function App() {
   }, [todos, status])
 
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <Container maxWidth="md">
+    <>
+      <Box className="install-ad">
+        <CloseIcon />
         <Button
           variant="contained"
           color="secondary"
           diasbleElevation
           className="install"
         >
-          Install app
+          Get app
         </Button>
-        <Typography variant="h4" gutterBottom align="center" color="primary">
-          Remind me!
-        </Typography>
+      </Box>
+      <Container maxWidth="md">
         <Form
           inputText={inputText}
           setInputText={setInputText}
@@ -113,6 +109,6 @@ export default function App() {
         </section>
       </Container>
       <Nav value={value} setStatus={setStatus} setValue={setValue} />
-    </React.Fragment>
+    </>
   )
 }

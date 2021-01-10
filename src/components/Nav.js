@@ -1,26 +1,25 @@
-import React from "react";
+import React from 'react'
 
 // material components
-import { makeStyles } from "@material-ui/core/styles";
-import BottomNavigation from "@material-ui/core/BottomNavigation";
-import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
+import { makeStyles } from '@material-ui/core/styles'
+import BottomNavigation from '@material-ui/core/BottomNavigation'
+import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
 
 // icons
-import DoneAllIcon from "@material-ui/icons/DoneAll";
-import ListIcon from "@material-ui/icons/List";
-import NotInterestedIcon from "@material-ui/icons/NotInterested";
+import DoneAllIcon from '@material-ui/icons/DoneAll'
+import ListIcon from '@material-ui/icons/List'
+import NotInterestedIcon from '@material-ui/icons/NotInterested'
 
 // custom Material UI styles
 const useStyles = makeStyles({
   topbar: {
-    margin: "0 0 2rem 0",
-    borderBottom: "1px solid silver"
+    padding: '1rem'
   }
-});
+})
 
 export default function Nav({ value, setStatus, setValue }) {
   //custom styles
-  const classes = useStyles();
+  const classes = useStyles()
 
   // return template JSX
   return (
@@ -28,8 +27,8 @@ export default function Nav({ value, setStatus, setValue }) {
       className={classes.topbar}
       value={value}
       onChange={(e, newValue) => {
-        setValue(newValue);
-        setStatus(newValue);
+        setValue(newValue)
+        setStatus(newValue)
       }}
       showLabels
     >
@@ -45,5 +44,5 @@ export default function Nav({ value, setStatus, setValue }) {
         icon={<NotInterestedIcon />}
       />
     </BottomNavigation>
-  );
+  )
 }
