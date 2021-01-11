@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 
 // import Material UI
 import { Box, Button, Container } from '@material-ui/core'
-import CloseIcon from '@material-ui/icons/Close'
+// import CloseIcon from '@material-ui/icons/Close'
 
 // import components
 import Nav from './components/Nav'
@@ -78,7 +78,6 @@ export default function App() {
   return (
     <>
       <Box className="install-ad">
-        <CloseIcon />
         <Button
           variant="contained"
           color="secondary"
